@@ -2,7 +2,9 @@ import React from "react";
 import Image from "next/image";
 import styles from "./Landing.module.css";
 import { Row, Col, Button, Space } from "antd";
+
 import { Typography } from "antd";
+import Card from "../Card/Card";
 
 const { Title, Text } = Typography;
 const Landig = () => {
@@ -19,6 +21,34 @@ const Landig = () => {
             </Text>
           </section>
         </div>
+        <section className={styles.rowWrapper}>
+          <Row>
+            <Col lg={8} className={styles.col}>
+              <Card
+                title="Buy"
+                description="Choose your car to bur Choose your car to bur Choose your car to bur
+        Choose your car to bur Choose your car to bur"
+                Click="Click here"
+              />
+            </Col>
+            <Col lg={8} className={styles.col}>
+              <Card
+                title="Sell"
+                description="Choose your car to bur Choose your car to bur Choose your car to bur
+        Choose your car to bur Choose your car to bur"
+                Click="Click here"
+              />
+            </Col>
+            <Col lg={8} className={styles.col}>
+              <Card
+                title="Rent"
+                description="Choose your car to bur Choose your car to bur Choose your car to bur
+        Choose your car to bur Choose your car to bur"
+                Click="Click here"
+              />
+            </Col>
+          </Row>
+        </section>
       </Space>
     </div>
   );
