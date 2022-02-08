@@ -7,13 +7,13 @@ interface CardProp {
   Click: string;
 }
 
-const { Title, Text } = Typography;
+const { Title, Paragraph } = Typography;
 
 function Card({ title, description, Click }: CardProp) {
   return (
     <div>
       <Title level={4}>{title}</Title>
-      <p>{description}</p>
+      <Paragraph>{description}</Paragraph>
       <Button type="primary" size="large">
         {Click}
       </Button>
