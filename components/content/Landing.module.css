@@ -17,3 +17,13 @@
 .col {
   text-align: center;
 }
+.col2 {
+  text-align: center;
+  background-color: lightblue;
+}
+.titleContainer {
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
