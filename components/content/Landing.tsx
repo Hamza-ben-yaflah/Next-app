@@ -5,7 +5,7 @@ import { Typography } from "antd";
 import Card from "../Card/Card";
 import Image from "next/image";
 import contact from "../../public/contact.jpg";
-
+import workspace from "../../public/workspace.jpg";
 const { TextArea } = Input;
 const { Title, Text } = Typography;
 
@@ -55,7 +55,26 @@ const Landig = () => {
               </Col>
             </Row>
           </section>
-
+          <section>
+            <Row>
+              <Col lg={12}>
+                <Image
+                  src={workspace}
+                  alt="work image"
+                  width={700}
+                  height={505}
+                />
+              </Col>
+              <Col lg={12} className={styles.col2Sectio2}>
+                <Title level={2}>How to find BSRcars</Title>
+                <Title level={3}>Tunisia</Title>
+                <Text>125 ibno sina </Text>
+                <Text>Tuins </Text>
+                <br />
+                <Button type="link">Open in Google Maps</Button>
+              </Col>
+            </Row>
+          </section>
           <section>
             <Row gutter={24}>
               <Col lg={8} className={styles.col}>
@@ -97,7 +116,7 @@ const Landig = () => {
                   </Button>
                 </Form>
               </Col>
-              <Col lg={16} className={styles.col2}>
+              <Col lg={16} className={styles.col2Sectio3}>
                 <Image
                   src={contact}
                   alt="contact image"
