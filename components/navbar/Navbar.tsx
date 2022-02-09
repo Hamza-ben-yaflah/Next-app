@@ -1,35 +1,65 @@
 import React from "react";
-import { Layout, Button, Input } from "antd";
+import { Layout, Button, Input, Menu } from "antd";
 import styles from "./Navbar.module.css";
-import { SearchOutlined } from "@ant-design/icons";
 import Image from "next/image";
 import car from "./car.jpg";
+import {
+  HomeOutlined,
+  QuestionCircleOutlined,
+  CustomerServiceOutlined,
+} from "@ant-design/icons";
 
 const { Header } = Layout;
 const { Search } = Input;
 function Navbar() {
   return (
-    <div className={styles.layout}>
-      <Header className={styles.header}>
-        <div className={styles.imageContainer}>
-          <Image
-            src={car}
-            alt="car image"
-            width={120}
-            height={70}
-            className={styles.imgCar}
-          />
-        </div>
-        <Search placeholder="Search" style={{ width: 200 }} size="large" />
-
+    <Header
+      className={styles.header}
+      style={{ position: "fixed", zIndex: 1, width: "100%" }}
+    >
+      <div className={styles.imageContainer}>
+        <Image
+          src={car}
+          alt="car image"
+          width={70}
+          height={50}
+          className={styles.imgCar}
+        />
+        <Button
+          type="link"
+          className={styles.btn}
+          size="large"
+          icon={<HomeOutlined />}
+        >
+          Home
+        </Button>
+        <Button
+          type="link"
+          className={styles.btn}
+          size="large"
+          icon={<QuestionCircleOutlined />}
+        >
+          About
+        </Button>
+        <Button
+          type="link"
+          className={styles.btn}
+          size="large"
+          icon={<CustomerServiceOutlined />}
+        >
+          Service
+        </Button>
+      </div>
+      <div className={styles.loginContainer}>
+        <Search placeholder="Search" style={{ width: 300 }} size="large" />
         <Button type="primary" className={styles.btn} size="large">
           Log in
         </Button>
         <Button type="primary" className={styles.btn} size="large">
           Sign up
         </Button>
-      </Header>
-    </div>
+      </div>
+    </Header>
   );
 }
 

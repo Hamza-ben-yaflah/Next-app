@@ -1,31 +1,26 @@
-.layout {
-  display: flex;
-  position: relative;
-}
-
 .header {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  flex-direction: row;
   align-items: center;
-  background: white;
+  background: rgb(255, 255, 255);
   border-bottom: 1px solid;
   width: 100%;
-  position: relative;
   height: 100px;
 }
 
 .btn {
   background: rgb(78, 30, 210);
   margin-left: 15px;
-  size: 16px;
 }
 
 .imageContainer {
-  border-radius: 50px;
-  position: absolute;
-  left: 0;
-  margin-top: 30px;
-  margin-left: 40px;
+  display: flex;
+  justify-content: center;
+}
+.loginContainer {
+  display: flex;
+  justify-content: center;
 }
 
 .imgCar {
