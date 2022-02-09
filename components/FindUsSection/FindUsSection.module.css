@@ -1,0 +1,8 @@
+.col2Sectio2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(24, 68, 83);
+  height: 365pt;
+}
