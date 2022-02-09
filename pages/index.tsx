@@ -1,10 +1,9 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Navbar from "../components/navbar/Navbar";
+import Navbar from "../components/Navbar/Navbar";
 import "antd/dist/antd.css";
-import { Content } from "antd/lib/layout/layout";
-
-import Landing from "../components/content/Landing";
+import Landing from "../components/Landing/Landing";
+import Footer from "../components/Footer/Footer";
 
 const Home: NextPage = () => {
   return (
@@ -16,6 +15,7 @@ const Home: NextPage = () => {
       </Head>
       <Navbar />
       <Landing />
+      <Footer />
     </div>
   );
 };
