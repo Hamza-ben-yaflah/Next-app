@@ -3,9 +3,27 @@ import Head from "next/head";
 import Navbar from "../components/Navbar/Navbar";
 import "antd/dist/antd.css";
 import Landing from "../components/Landing/Landing";
-import Footer from "../components/Footer/Footer";
+import { createClient } from "contentful";
 
-const Home: NextPage = () => {
+export async function getStaticProps() {
+  const client = require("contentful").createClient({
+    space: process.env.CONTENTFULLY_SPACE_ID,
+    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+  });
+
+  const res = await client.getEntries({ content_type: "card" });
+  console.log(res, "sss");
+
+  return {
+    props: {
+      cards: res.items,
+    },
+  };
+}
+
+const Home = ({ cards }: { cards: any }) => {
+  console.log(cards);
+
   return (
     <div>
       <Head>
@@ -14,8 +32,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar />
-      <Landing />
-      <Footer />
+      <Landing cards={cards} />
     </div>
   );
 };
