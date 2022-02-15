@@ -3,19 +3,16 @@ import HeroSection from "../HeroSection/HeroSection";
 import FeatureSection from "../FeatureSection/FeatureSection";
 import FindUsSection from "../FindUsSection/FindUsSection";
 import ContactSection from "../ContactSection/ContactSection";
-
-const Landig = () => {
+import Footer from "../Footer/Footer";
+const Landig = ({ cards }: { cards: any }) => {
   return (
-    <div>
-      <Space direction="vertical" size="large">
-        <HeroSection />
-        <Space direction="vertical" size={120}>
-          <FeatureSection />
-          <FindUsSection />
-          <ContactSection />
-        </Space>
-      </Space>
-    </div>
+    <Space direction="vertical" size="large">
+      <HeroSection />
+      <FeatureSection cards={cards} />
+      <FindUsSection />
+      <ContactSection />
+      <Footer />
+    </Space>
   );
 };
 
