@@ -12,7 +12,6 @@ export async function getStaticProps() {
   });
 
   const res = await client.getEntries({ content_type: "card" });
-  console.log(res, "sss");
 
   return {
     props: {
@@ -21,7 +20,7 @@ export async function getStaticProps() {
   };
 }
 
-const Home = ({ cards }: { cards: any }) => {
+const Home = ({ cards }: any) => {
   console.log(cards);
 
   return (
