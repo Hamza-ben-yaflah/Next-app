@@ -4,6 +4,7 @@ import styles from "./Navbar.module.css";
 import Image from "next/image";
 import car from "./car.jpg";
 import Link from "next/link";
+
 import {
   HomeOutlined,
   QuestionCircleOutlined,
@@ -66,9 +67,11 @@ function Navbar() {
       </div>
       <div className={styles.loginContainer}>
         <Search placeholder="Search" style={{ width: 300 }} size="large" />
-        <Button type="primary" className={styles.btn} size="large">
-          Log in
-        </Button>
+        <Link href="/LoginRegister" passHref>
+          <Button type="primary" className={styles.btn} size="large">
+            <a>Log in</a>
+          </Button>
+        </Link>
         <Button type="primary" className={styles.btn} size="large">
           Sign up
         </Button>
