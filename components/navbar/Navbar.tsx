@@ -3,14 +3,17 @@ import { Layout, Button, Input, Menu } from "antd";
 import styles from "./Navbar.module.css";
 import Image from "next/image";
 import car from "./car.jpg";
+import Link from "next/link";
 import {
   HomeOutlined,
   QuestionCircleOutlined,
   CustomerServiceOutlined,
+  SnippetsOutlined,
 } from "@ant-design/icons";
 
 const { Header } = Layout;
 const { Search } = Input;
+
 function Navbar() {
   return (
     <Header
@@ -48,6 +51,17 @@ function Navbar() {
           icon={<CustomerServiceOutlined />}
         >
           Service
+        </Button>
+
+        <Button
+          type="link"
+          className={styles.btn}
+          size="large"
+          icon={<SnippetsOutlined />}
+        >
+          <Link href="/Blog" passHref>
+            <a>Blog</a>
+          </Link>
         </Button>
       </div>
       <div className={styles.loginContainer}>
