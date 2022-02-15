@@ -5,13 +5,15 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "contentful-typescript-codegen": "contentful-typescript-codegen --output @types/generated/contentful.d.ts"
   },
   "dependencies": {
     "@zeit/next-css": "^1.0.1",
     "antd": "^4.18.5",
     "bootstrap": "^5.1.3",
     "contentful": "^9.1.9",
+    "contentful-typescript-codegen": "^3.2.3",
     "next": "12.0.10",
     "react": "17.0.2",
     "react-bootstrap": "^2.1.2",
