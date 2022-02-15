@@ -6,8 +6,6 @@ import styles from "./FeatureSection.module.css";
 import { createClient } from "contentful";
 
 function FeatureSection({ cards }: { cards: any }) {
-  console.log(cards);
-
   return (
     <section>
       <Row className={styles.titleContainer}>

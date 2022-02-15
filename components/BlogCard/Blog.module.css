@@ -1,0 +1,9 @@
+.reverse {
+  flex-direction: row-reverse;
+}
+.colTwoBlog {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

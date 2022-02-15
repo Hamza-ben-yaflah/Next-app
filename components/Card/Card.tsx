@@ -12,19 +12,18 @@ import Link from "next/link";
 const { Title, Paragraph } = Typography;
 
 function Card({ card }: any) {
-  console.log(card);
-
   return (
     <div className={styles.card}>
       <Title level={4} italic>
         {card.fields.title}
       </Title>
       <Paragraph>{card.fields.descreption}</Paragraph>
-      <Link href={card.fields.button.fields.url} passHref>
-        <Button type="primary" size="large">
-          {card.fields.button.fields.title}
-        </Button>
-      </Link>
+
+      <Button type="primary" size="large">
+        <Link href={card.fields.button.fields.url} passHref>
+          <a>{card.fields.button.fields.title}</a>
+        </Link>
+      </Button>
     </div>
   );
 }

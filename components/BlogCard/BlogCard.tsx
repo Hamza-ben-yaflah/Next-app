@@ -4,7 +4,7 @@ import React from "react";
 import Image from "next/image";
 import styles from "./Blog.module.css";
 import Link from "next/link";
-
+import { UserOutlined } from "@ant-design/icons";
 const classeRow = "reverse";
 
 function BlogCard({ blog }: any) {
@@ -19,17 +19,20 @@ function BlogCard({ blog }: any) {
             height={400}
           />
         </Col>
-        <Col lg={12}>
+        <Col lg={12} className={styles.colTwoBlog}>
           <Title level={2}>{blog.fields.title}</Title>
           <Paragraph>
             {blog.fields.description + "  "}
             <Link href={"/articles/" + blog.fields.slug}>
               <a>
-                <Text>{blog.fields.details}</Text>
+                <Text type="danger">{blog.fields.details}</Text>
               </a>
             </Link>
           </Paragraph>
-          <Title>{blog.fields.author}</Title>
+          <Title level={4}>
+            <UserOutlined />
+            {blog.fields.author}
+          </Title>
         </Col>
       </Row>
     </Space>
