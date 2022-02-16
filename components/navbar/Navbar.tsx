@@ -29,14 +29,16 @@ function Navbar() {
           height={50}
           className={styles.imgCar}
         />
-        <Button
-          type="link"
-          className={styles.btn}
-          size="large"
-          icon={<HomeOutlined />}
-        >
-          Home
-        </Button>
+        <Link href="/" passHref>
+          <Button
+            type="link"
+            className={styles.btn}
+            size="large"
+            icon={<HomeOutlined />}
+          >
+            Home
+          </Button>
+        </Link>
         <Button
           type="link"
           className={styles.btn}
@@ -72,9 +74,11 @@ function Navbar() {
             <a>Log in</a>
           </Button>
         </Link>
-        <Button type="primary" className={styles.btn} size="large">
-          Sign up
-        </Button>
+        <Link href="/RegisterPage" passHref>
+          <Button type="primary" className={styles.btn} size="large">
+            <a>Sign up</a>
+          </Button>
+        </Link>
       </div>
     </Header>
   );

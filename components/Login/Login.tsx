@@ -2,7 +2,7 @@ import React from "react";
 import { Form, Input, Button, Checkbox } from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
 import styles from "./Login.module.css";
-import Link from "antd/lib/typography/Link";
+import Link from "next/link";
 
 interface LoginProp {
   ChangeState: () => void;
@@ -43,14 +43,16 @@ const Login = ({ ChangeState }: LoginProp) => {
         </Form.Item>
 
         <Form.Item>
-          <Button
-            type="primary"
-            htmlType="submit"
-            className={styles.login_form_button}
-          >
-            Log in
-          </Button>
-          Or <Link onClick={ChangeState}>register now! </Link>
+          <Link href="/ChoicePage" passHref>
+            <Button
+              type="primary"
+              htmlType="submit"
+              className={styles.login_form_button}
+            >
+              Log in
+            </Button>
+          </Link>
+          Or <a onClick={ChangeState}>register now!</a>{" "}
         </Form.Item>
       </Form>
     </div>
