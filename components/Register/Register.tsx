@@ -1,6 +1,8 @@
-import { Button, Checkbox, Form, Input, Select } from "antd";
+import { Button, Form, Input, Select } from "antd";
 import React from "react";
 import styles from "./Register.module.css";
+import Link from "next/link";
+
 const { Option } = Select;
 function Register() {
   const prefixSelector = (
@@ -108,13 +110,15 @@ function Register() {
           </Select>
         </Form.Item>
         <Form.Item>
-          <Button
-            type="primary"
-            htmlType="submit"
-            className={styles.Register_form_button}
-          >
-            Register
-          </Button>
+          <Link href="/ChoicePage" passHref>
+            <Button
+              type="primary"
+              htmlType="submit"
+              className={styles.Register_form_button}
+            >
+              <a>Register</a>
+            </Button>
+          </Link>
         </Form.Item>
       </Form>
     </div>
