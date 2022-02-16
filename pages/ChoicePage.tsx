@@ -1,6 +1,7 @@
 import React from "react";
 import FeatureSection from "../components/FeatureSection/FeatureSection";
 import { client } from "../client/contentful";
+import styles from "../PageCss/ChoicePage.module.css";
 
 export async function getStaticProps() {
   const res = await client.getEntries({ content_type: "card" });
@@ -13,7 +14,7 @@ export async function getStaticProps() {
 }
 const ChoicePage = ({ cards }: { cards: any }) => {
   return (
-    <div>
+    <div className={styles.container}>
       <FeatureSection cards={cards} />
     </div>
   );
