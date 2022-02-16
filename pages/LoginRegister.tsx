@@ -1,7 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
+import Login from "../components/Login/Login";
+import Register from "../components/Register/Register";
 
 function LoginRegister() {
-  return <div>LoginRegister</div>;
+  const [isLogin, setIslogin] = useState(true);
+  console.log(isLogin);
+
+  function ChangeState() {
+    setIslogin(!isLogin);
+  }
+
+  return (
+    <div>{isLogin ? <Login ChangeState={ChangeState} /> : <Register />}</div>
+  );
 }
 
 export default LoginRegister;
