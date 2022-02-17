@@ -1,13 +1,25 @@
-import { Header } from "antd/lib/layout/layout";
 import React from "react";
 import ContainerBuy from "../components/ContainerBuy/ContainerBuy";
 import Navbar from "../components/Navbar/Navbar";
+import { client } from "../client/contentful";
 
-function buy() {
+export async function getStaticProps() {
+  const res = await client.getEntries({ content_type: "carCard" });
+
+  return {
+    props: {
+      cars: res.items,
+    },
+  };
+}
+
+function buy({ cars }: { cars: any }) {
+  console.log(cars);
+
   return (
     <>
       {/* <Navbar /> */}
-      <ContainerBuy />
+      <ContainerBuy cars={cars} />
     </>
   );
 }
