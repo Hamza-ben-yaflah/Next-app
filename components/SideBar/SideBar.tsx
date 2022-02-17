@@ -95,7 +95,28 @@ const SideBar = () => {
           </Menu.Item>
         </Menu.ItemGroup>
       </SubMenu>
-      <SubMenu title="Price"></SubMenu>
+      <SubMenu title="Price">
+        <Menu.ItemGroup key="g4">
+          <Menu.Item>
+            from :{" "}
+            <Select defaultValue="20.000">
+              <Option value="20.000">20.000</Option>
+              <Option value="30.000">30.000</Option>
+              <Option value="40.000">40.000</Option>
+              <Option value="50.000">50.000</Option>
+              <Option value="260.000">60.000</Option>
+            </Select>
+            To :{" "}
+            <Select defaultValue="20.000">
+              <Option value="20.000">20.000</Option>
+              <Option value="30.000">30.000</Option>
+              <Option value="40.000">40.000</Option>
+              <Option value="50.000">50.000</Option>
+              <Option value="260.000">60.000</Option>
+            </Select>
+          </Menu.Item>
+        </Menu.ItemGroup>
+      </SubMenu>
       <SubMenu title="Year">
         <Menu.ItemGroup key="g4">
           <Menu.Item>
