@@ -13,7 +13,7 @@ function ContactSection() {
       <Row gutter={24}>
         <Col lg={8} className={styles.col}>
           <Title level={1}>Drop us a line</Title>
-          <Form layout="vertical">
+          <Form layout="vertical" style={{ width: 300 }}>
             <Form.Item
               label="Full Name"
               name="fullname"
@@ -41,6 +41,7 @@ function ContactSection() {
               <TextArea
                 rows={4}
                 placeholder="Write your message for the team"
+                size="large"
               />
             </Form.Item>
             <Button type="primary" className={styles.btn} size="large">

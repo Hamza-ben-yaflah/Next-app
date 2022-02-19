@@ -1,9 +1,4 @@
-.col2Sectio3 {
-  text-align: center;
-  background-color: rgb(24, 68, 83);
-}
-
-.col {
+.article {
   display: flex;
   flex-direction: column;
   justify-content: center;

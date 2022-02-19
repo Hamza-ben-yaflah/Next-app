@@ -1,9 +1,7 @@
-.col2Sectio3 {
-  text-align: center;
-  background-color: rgb(24, 68, 83);
+.reverse {
+  flex-direction: row-reverse;
 }
-
-.col {
+.colTwoBlog {
   display: flex;
   flex-direction: column;
   justify-content: center;

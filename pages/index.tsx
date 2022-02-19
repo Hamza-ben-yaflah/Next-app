@@ -1,11 +1,26 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Navbar from "../components/Navbar/Navbar";
-import "antd/dist/antd.css";
+import Navbar from "../components/navbar/Navbar";
 import Landing from "../components/Landing/Landing";
-import Footer from "../components/Footer/Footer";
 
-const Home: NextPage = () => {
+export async function getStaticProps() {
+  const client = require("contentful").createClient({
+    space: process.env.CONTENTFULLY_SPACE_ID,
+    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+  });
+
+  const res = await client.getEntries({ content_type: "card" });
+
+  return {
+    props: {
+      cards: res.items,
+    },
+  };
+}
+
+const Home = ({ cards }: any) => {
+  console.log(cards);
+
   return (
     <div>
       <Head>
@@ -14,8 +29,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar />
-      <Landing />
-      <Footer />
+      <Landing cards={cards} />
     </div>
   );
 };
