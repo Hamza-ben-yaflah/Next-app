@@ -2,13 +2,9 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Navbar from "../components/navbar/Navbar";
 import Landing from "../components/Landing/Landing";
+import { client } from "../client/contentful";
 
 export async function getStaticProps() {
-  const client = require("contentful").createClient({
-    space: process.env.CONTENTFULLY_SPACE_ID,
-    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-  });
-
   const res = await client.getEntries({ content_type: "card" });
 
   return {
