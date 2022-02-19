@@ -19,8 +19,6 @@ export async function getStaticProps() {
 }
 
 function Blog({ blogs }: any) {
-  console.log(blogs);
-
   return (
     <div>
       {blogs.map((blog: any) => (

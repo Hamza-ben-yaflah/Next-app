@@ -1,7 +1,7 @@
 import React from "react";
 
-function sell() {
+function Sell() {
   return <div>sell</div>;
 }
 
-export default sell;
+export default Sell;

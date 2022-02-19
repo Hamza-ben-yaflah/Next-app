@@ -1,7 +1,7 @@
 import React from "react";
 
-function rent() {
+function Rent() {
   return <div>rent</div>;
 }
 
-export default rent;
+export default Rent;
