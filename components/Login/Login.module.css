@@ -1,0 +1,9 @@
+.login {
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.login_form_button {
+  width: 100%;
+}

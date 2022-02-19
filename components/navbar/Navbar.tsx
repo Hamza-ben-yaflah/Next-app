@@ -4,6 +4,7 @@ import styles from "./Navbar.module.css";
 import Image from "next/image";
 import car from "./car.jpg";
 import Link from "next/link";
+
 import {
   HomeOutlined,
   QuestionCircleOutlined,
@@ -28,14 +29,16 @@ function Navbar() {
           height={50}
           className={styles.imgCar}
         />
-        <Button
-          type="link"
-          className={styles.btn}
-          size="large"
-          icon={<HomeOutlined />}
-        >
-          Home
-        </Button>
+        <Link href="/" passHref>
+          <Button
+            type="link"
+            className={styles.btn}
+            size="large"
+            icon={<HomeOutlined />}
+          >
+            Home
+          </Button>
+        </Link>
         <Button
           type="link"
           className={styles.btn}
@@ -67,10 +70,14 @@ function Navbar() {
       <div className={styles.loginContainer}>
         <Search placeholder="Search" style={{ width: 300 }} size="large" />
         <Button type="primary" className={styles.btn} size="large">
-          Log in
+          <Link href="/LoginRegister" passHref>
+            <a>Log in</a>
+          </Link>
         </Button>
         <Button type="primary" className={styles.btn} size="large">
-          Sign up
+          <Link href="/RegisterPage" passHref>
+            <a>Sign up</a>
+          </Link>
         </Button>
       </div>
     </Header>
