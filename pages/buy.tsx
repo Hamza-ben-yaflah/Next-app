@@ -1,7 +1,7 @@
 import React from "react";
 
-function buy() {
+function Buy() {
   return <div></div>;
 }
 
-export default buy;
+export default Buy;
