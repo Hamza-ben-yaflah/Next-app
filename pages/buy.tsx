@@ -13,7 +13,7 @@ export async function getStaticProps() {
   };
 }
 
-function buy({ cars }: { cars: any }) {
+function Buy({ cars }: { cars: any }) {
   console.log(cars);
 
   return (
@@ -24,4 +24,4 @@ function buy({ cars }: { cars: any }) {
   );
 }
 
-export default buy;
+export default Buy;
