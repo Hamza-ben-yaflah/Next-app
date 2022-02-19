@@ -1,7 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Navbar from "../components/Navbar/Navbar";
-import "antd/dist/antd.css";
+import Navbar from "../components/navbar/Navbar";
 import Landing from "../components/Landing/Landing";
 import { client } from "../client/contentful";
 

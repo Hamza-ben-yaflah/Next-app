@@ -1,6 +1,6 @@
 import React from "react";
 import ContainerBuy from "../components/ContainerBuy/ContainerBuy";
-import Navbar from "../components/Navbar/Navbar";
+import Navbar from "../components/navbar/Navbar";
 import { client } from "../client/contentful";
 
 export async function getStaticProps() {

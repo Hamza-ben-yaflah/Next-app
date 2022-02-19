@@ -69,16 +69,16 @@ function Navbar() {
       </div>
       <div className={styles.loginContainer}>
         <Search placeholder="Search" style={{ width: 300 }} size="large" />
-        <Link href="/LoginRegister" passHref>
-          <Button type="primary" className={styles.btn} size="large">
+        <Button type="primary" className={styles.btn} size="large">
+          <Link href="/LoginRegister" passHref>
             <a>Log in</a>
-          </Button>
-        </Link>
-        <Link href="/RegisterPage" passHref>
-          <Button type="primary" className={styles.btn} size="large">
+          </Link>
+        </Button>
+        <Button type="primary" className={styles.btn} size="large">
+          <Link href="/RegisterPage" passHref>
             <a>Sign up</a>
-          </Button>
-        </Link>
+          </Link>
+        </Button>
       </div>
     </Header>
   );
