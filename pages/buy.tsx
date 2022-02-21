@@ -1,7 +1,9 @@
-import React from "react";
+import React, { createContext } from "react";
 import ContainerBuy from "../components/ContainerBuy/ContainerBuy";
 import Navbar from "../components/navbar/Navbar";
 import { client } from "../client/contentful";
+
+export const carContext = createContext([]);
 
 export async function getStaticProps() {
   const res = await client.getEntries({ content_type: "carCard" });
@@ -19,7 +21,9 @@ function Buy({ cars }: { cars: any }) {
   return (
     <>
       {/* <Navbar /> */}
-      <ContainerBuy cars={cars} />
+      <carContext.Provider value={cars}>
+        <ContainerBuy />
+      </carContext.Provider>
     </>
   );
 }
