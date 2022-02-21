@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Typography, Row, Col } from "antd";
 const { Title } = Typography;
 import Card from "../Card/Card";
 import styles from "./FeatureSection.module.css";
 import { createClient } from "contentful";
+import { cardContext } from "../../pages/index";
 
-function FeatureSection({ cards }: { cards: any }) {
+function FeatureSection() {
+  const cards = useContext(cardContext);
+  console.log(cards);
+
   return (
     <section>
       <Row className={styles.titleContainer}>

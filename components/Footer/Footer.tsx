@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./footer.module.css";
+import styles from "./Footer.module.css";
 import { Layout, Col, Row } from "antd";
 import { Typography } from "antd";
 import Link from "next/link";

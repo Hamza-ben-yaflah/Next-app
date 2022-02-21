@@ -4,11 +4,17 @@ import FeatureSection from "../FeatureSection/FeatureSection";
 import FindUsSection from "../FindUsSection/FindUsSection";
 import ContactSection from "../ContactSection/ContactSection";
 import Footer from "../Footer/Footer";
-const Landig = ({ cards }: { cards: any }) => {
+import { useContext } from "react";
+import { cardContext } from "../../pages";
+
+const Landig = () => {
+  const cards = useContext(cardContext);
+  console.log(cards);
+
   return (
     <Space direction="vertical" size="large">
       <HeroSection />
-      <FeatureSection cards={cards} />
+      <FeatureSection />
       <FindUsSection />
       <ContactSection />
       <Footer />
