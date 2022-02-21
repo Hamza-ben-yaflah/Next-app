@@ -1,12 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
-import Car from "../../public/car.jpg";
-import { Typography } from "antd";
+import { Button, Modal, Typography } from "antd";
 import styles from "./CardCar.module.css";
 const { Text } = Typography;
 function CardCar({ car }: { car: any }) {
   console.log(car);
+  const [isModalVisible, setIsModalVisible] = useState(false);
 
+  const showModal = () => {
+    setIsModalVisible(true);
+  };
+
+  const handleOk = () => {
+    setIsModalVisible(false);
+  };
+
+  const handleCancel = () => {
+    setIsModalVisible(false);
+  };
   return (
     <div className={styles.container}>
       <Image
@@ -17,6 +28,32 @@ function CardCar({ car }: { car: any }) {
       />
       <Text>{car.fields.carName}</Text>
       <Text>{`$ ${car.fields.price}K`}</Text>
+      <Button
+        type="primary"
+        size="large"
+        className={styles.btn}
+        onClick={showModal}
+      >
+        {car.fields.buyButton}
+      </Button>
+      <Modal
+        title="Details"
+        visible={isModalVisible}
+        onOk={handleOk}
+        onCancel={handleCancel}
+      >
+        <Text>Car : {car.fields.carName}</Text>
+        <br />
+        <Text>Owner : {car.fields.owner}</Text>
+        <br />
+        <Text>Owner PhoneNumber : {car.fields.phoneNumber}</Text>
+        <br />
+        <Text>Year : {car.fields.year}</Text>
+        <br />
+        <Text>Distance : {car.fields.distance} Kilometers</Text>
+        <br />
+        <Text>Price : {car.fields.price}k</Text>
+      </Modal>
     </div>
   );
 }
