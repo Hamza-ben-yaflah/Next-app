@@ -40,6 +40,52 @@ export interface IBlog extends Entry<IBlogFields> {
   };
 }
 
+export interface ICarCardFields {
+  /** imageCar */
+  imageCar?: Asset | undefined;
+
+  /** carName */
+  carName?: string | undefined;
+
+  /** Price */
+  price?: number | undefined;
+
+  /** BuyButton */
+  buyButton?: string | undefined;
+
+  /** Owner */
+  owner?: string | undefined;
+
+  /** Year */
+  year?: number | undefined;
+
+  /** Distance */
+  distance?: number | undefined;
+
+  /** Description */
+  description?: string | undefined;
+
+  /** PhoneNumber */
+  phoneNumber?: number | undefined;
+}
+
+export interface ICarCard extends Entry<ICarCardFields> {
+  sys: {
+    id: string;
+    type: string;
+    createdAt: string;
+    updatedAt: string;
+    locale: string;
+    contentType: {
+      sys: {
+        id: "carCard";
+        linkType: "ContentType";
+        type: "Link";
+      };
+    };
+  };
+}
+
 export interface ICardFields {
   /** Title */
   title?: string | undefined;
@@ -93,7 +139,7 @@ export interface ILink extends Entry<ILinkFields> {
   };
 }
 
-export type CONTENT_TYPE = "blog" | "card" | "link";
+export type CONTENT_TYPE = "blog" | "carCard" | "card" | "link";
 
 export type LOCALE_CODE = "en-US";
 
