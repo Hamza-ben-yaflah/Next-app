@@ -3,6 +3,7 @@ import Head from "next/head";
 import Navbar from "../components/navbar/Navbar";
 import Landing from "../components/Landing/Landing";
 import { client } from "../client/contentful";
+import { ICard } from "../@types/generated/contentful";
 
 export async function getStaticProps() {
   const res = await client.getEntries({ content_type: "card" });
@@ -14,9 +15,7 @@ export async function getStaticProps() {
   };
 }
 
-const Home = ({ cards }: any) => {
-  console.log(cards);
-
+const Home = ({ cards }: { cards: ICard[] }) => {
   return (
     <div>
       <Head>

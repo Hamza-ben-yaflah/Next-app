@@ -4,7 +4,8 @@ import FeatureSection from "../FeatureSection/FeatureSection";
 import FindUsSection from "../FindUsSection/FindUsSection";
 import ContactSection from "../ContactSection/ContactSection";
 import Footer from "../Footer/Footer";
-const Landig = ({ cards }: { cards: any }) => {
+import { ICard } from "../../@types/generated/contentful";
+const Landig = ({ cards }: { cards: ICard[] }) => {
   return (
     <Space direction="vertical" size="large">
       <HeroSection />
