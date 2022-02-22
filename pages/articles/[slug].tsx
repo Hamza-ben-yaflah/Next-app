@@ -2,8 +2,13 @@ import React from "react";
 import { Space, Typography } from "antd";
 import Image from "next/image";
 import styles from "./article.module.css";
+import { IBlog } from "../../@types/generated/contentful";
 
 const { Title, Text, Paragraph } = Typography;
+
+interface Params {
+  params: { slug: string };
+}
 
 const client = require("contentful").createClient({
   space: process.env.CONTENTFULLY_SPACE_ID,
@@ -12,20 +17,21 @@ const client = require("contentful").createClient({
 
 export async function getStaticPaths() {
   let data = await client.getEntries({ content_type: "blog" });
+  const paths: Params[] = data.items.map((item: IBlog) => ({
+    params: { slug: item.fields.slug },
+  }));
+
   return {
-    paths: data.items.map((item: any) => ({
-      params: { slug: item.fields.slug },
-    })),
+    paths,
     fallback: true,
   };
 }
 
-export async function getStaticProps({ params }: any) {
+export async function getStaticProps({ params }: Params) {
   let data = await client.getEntries({
     content_type: "blog",
     "fields.slug": params.slug,
   });
-  console.log(data, "data");
 
   return {
     props: {
@@ -34,14 +40,18 @@ export async function getStaticProps({ params }: any) {
   };
 }
 
-function Article({ article }: any) {
+interface ArticleProps {
+  article: IBlog;
+}
+
+function Article({ article }: ArticleProps) {
   return (
     <Space className={styles.article} size="large">
       <Title>{article.fields.title}</Title>
       <Title level={2}>{article.fields.author}</Title>
       <Image
         alt="car Image"
-        src={"https:" + article.fields.carImage.fields.file.url}
+        src={"https:" + article.fields.carImage?.fields.file.url}
         width={600}
         height={300}
       />

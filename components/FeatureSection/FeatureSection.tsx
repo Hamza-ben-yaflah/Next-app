@@ -3,7 +3,6 @@ import { Typography, Row, Col } from "antd";
 const { Title } = Typography;
 import Card from "../Card/Card";
 import styles from "./FeatureSection.module.css";
-import { createClient } from "contentful";
 import { cardContext } from "../../pages/index";
 import { ICard } from "../../@types/generated/contentful";
 

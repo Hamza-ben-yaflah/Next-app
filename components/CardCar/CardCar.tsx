@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { Button, Modal, Typography } from "antd";
 import styles from "./CardCar.module.css";
+import { ICarCard } from "../../@types/generated/contentful";
 const { Text } = Typography;
-function CardCar({ car }: { car: any }) {
-  console.log(car);
+function CardCar({ car }: { car: ICarCard }) {
   const [isModalVisible, setIsModalVisible] = useState(false);
 
   const showModal = () => {
@@ -21,7 +21,7 @@ function CardCar({ car }: { car: any }) {
   return (
     <div className={styles.container}>
       <Image
-        src={"https:" + car.fields.imageCar.fields.file.url}
+        src={"https:" + car.fields.imageCar?.fields.file.url}
         alt=" car image"
         width={100}
         height={100}

@@ -18,7 +18,11 @@ export async function getStaticProps() {
   };
 }
 
-const Home = ({ cards }: { cards: ICard[] }) => {
+interface HomeProps {
+  cards: ICard[];
+}
+
+const Home = ({ cards }: HomeProps) => {
   return (
     <div>
       <Head>

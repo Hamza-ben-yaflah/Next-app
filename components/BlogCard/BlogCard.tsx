@@ -5,16 +5,20 @@ import Image from "next/image";
 import styles from "./Blog.module.css";
 import Link from "next/link";
 import { UserOutlined } from "@ant-design/icons";
+import { IBlog } from "../../@types/generated/contentful";
+import { Sys } from "contentful";
 const classeRow = "reverse";
 
-function BlogCard({ blog }: any) {
+function BlogCard({ blog }: { blog: IBlog }) {
   return (
     <Space direction="vertical" size="large">
-      <Row className={blog.sys.revision % 2 === 0 ? styles.reverse : ""}>
+      <Row
+        className={(blog.sys as Sys).revision! % 2 === 0 ? styles.reverse : ""}
+      >
         <Col lg={12}>
           <Image
             alt="car Image"
-            src={"https:" + blog.fields.carImage.fields.file.url}
+            src={"https:" + blog.fields.carImage?.fields.file.url}
             width={600}
             height={400}
           />
