@@ -6,11 +6,9 @@ import ContactSection from "../ContactSection/ContactSection";
 import Footer from "../Footer/Footer";
 import { useContext } from "react";
 import { cardContext } from "../../pages";
+import { ICard } from "../../@types/generated/contentful";
 
 const Landig = () => {
-  const cards = useContext(cardContext);
-  console.log(cards);
-
   return (
     <Space direction="vertical" size="large">
       <HeroSection />
