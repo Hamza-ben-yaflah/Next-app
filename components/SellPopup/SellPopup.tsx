@@ -46,6 +46,7 @@ const prefixSelector = (
 function SellPopup({ showPopup, handleCancel, handleAdd }: SellPopupProp) {
   const handelSubmit = (value: CarProp) => {
     handleAdd(value);
+    handleCancel();
   };
 
   return (
