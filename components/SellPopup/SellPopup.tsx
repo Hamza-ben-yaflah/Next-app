@@ -9,7 +9,6 @@ import {
   Upload,
 } from "antd";
 import React, { useState } from "react";
-import { UploadOutlined } from "@ant-design/icons";
 
 export interface CarProp {
   id: number;

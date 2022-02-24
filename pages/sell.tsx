@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Button, Layout, Modal, Space, Table } from "antd";
 import SellPopup, { CarProp } from "../components/SellPopup/SellPopup";
 
@@ -40,7 +40,7 @@ function Sell() {
     {
       title: "Action",
       key: "action",
-      render: (text: string, record: any) => (
+      render: (text: string, record: CarProp) => (
         <Space size="middle">
           <Button type="primary">Edit</Button>
           <Button
@@ -56,13 +56,13 @@ function Sell() {
     },
   ];
 
-  const handleDelete = (record: any) => {
+  const handleDelete = (record: CarProp) => {
     const Newcars = cars.filter((car: CarProp) => car.id !== record.id);
     setCars([...Newcars]);
   };
 
   const [isOpen, setIsopen] = useState<boolean>(false);
-  const [cars, setCars] = useState<any>([]);
+  const [cars, setCars] = useState<CarProp[]>([]);
 
   const handleAdd = (carInfo: CarProp) => {
     setCars([...cars, carInfo]);
