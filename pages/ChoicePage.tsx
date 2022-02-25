@@ -3,6 +3,7 @@ import FeatureSection from "../components/FeatureSection/FeatureSection";
 import { client } from "../client/contentful";
 import styles from "../PageCss/ChoicePage.module.css";
 import { ICard } from "../@types/generated/contentful";
+import { cardContext } from ".";
 
 export async function getStaticProps() {
   const res = await client.getEntries({ content_type: "card" });
@@ -16,7 +17,9 @@ export async function getStaticProps() {
 const ChoicePage = ({ cards }: { cards: ICard[] }) => {
   return (
     <div className={styles.container}>
-      <FeatureSection cards={cards} />
+      <cardContext.Provider value={cards}>
+        <FeatureSection />
+      </cardContext.Provider>
     </div>
   );
 };

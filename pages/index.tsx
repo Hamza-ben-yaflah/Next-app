@@ -3,7 +3,10 @@ import Head from "next/head";
 import Navbar from "../components/navbar/Navbar";
 import Landing from "../components/Landing/Landing";
 import { client } from "../client/contentful";
+import { createContext } from "react";
 import { ICard } from "../@types/generated/contentful";
+
+export const cardContext = createContext<ICard[]>([]);
 
 export async function getStaticProps() {
   const res = await client.getEntries({ content_type: "card" });
@@ -15,7 +18,11 @@ export async function getStaticProps() {
   };
 }
 
-const Home = ({ cards }: { cards: ICard[] }) => {
+interface HomeProps {
+  cards: ICard[];
+}
+
+const Home = ({ cards }: HomeProps) => {
   return (
     <div>
       <Head>
@@ -24,7 +31,9 @@ const Home = ({ cards }: { cards: ICard[] }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar />
-      <Landing cards={cards} />
+      <cardContext.Provider value={cards}>
+        <Landing />
+      </cardContext.Provider>
     </div>
   );
 };
