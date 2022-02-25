@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Button, Layout, Modal, Space, Table } from "antd";
-import SellPopup, { CarProp } from "../components/SellPopup/SellPopup";
+import SellPopup from "../components/SellPopup/SellPopup";
+import { CarProp } from "../components/SellPopup/types";
 
 const { Header } = Layout;
 

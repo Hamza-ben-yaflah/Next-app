@@ -9,21 +9,7 @@ import {
   Upload,
 } from "antd";
 import React, { useState } from "react";
-
-export interface CarProp {
-  id: number;
-  ownerName: string;
-  carName: string;
-  ownerPhoneNumber: string;
-  price: number;
-  image: string;
-}
-
-export interface SellPopupProp {
-  showPopup: boolean;
-  handleCancel: () => void;
-  handleAdd: (carInfo: CarProp) => void;
-}
+import { CarProp, SellPopupProp } from "./types";
 
 const { Option } = Select;
 
@@ -50,7 +36,7 @@ function SellPopup({ showPopup, handleCancel, handleAdd }: SellPopupProp) {
 
   return (
     <Modal
-      title="Basic Modal"
+      title="Owner Details"
       visible={showPopup}
       footer={[
         <Button key="back" type="primary" onClick={handleCancel}>
