@@ -4,14 +4,14 @@ import Image from "next/image";
 import styles from "./article.module.css";
 import { IBlog } from "../../@types/generated/contentful";
 
-const { Title, Text, Paragraph } = Typography;
+const { Title, Paragraph } = Typography;
 
 interface Params {
   params: { slug: string };
 }
 
 const client = require("contentful").createClient({
-  space: process.env.CONTENTFULLY_SPACE_ID,
+  space: process.env.CONTENTFUL_SPACE_ID,
   accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
 });
 
