@@ -4,11 +4,12 @@ export interface CarProp {
   carName: string;
   ownerPhoneNumber: string;
   price: number;
-  image: string;
+  imageCar: string;
 }
 
 export interface SellPopupProp {
   showPopup: boolean;
   handleCancel: () => void;
-  handleAdd: (carInfo: CarProp) => void;
+  handleEditAdd: (carInfo: CarProp) => void;
+  data?: CarProp;
 }
