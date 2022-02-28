@@ -43,7 +43,15 @@ function Sell() {
       key: "action",
       render: (text: string, record: CarProp) => (
         <Space size="middle">
-          <Button type="primary">Edit</Button>
+          <Button
+            type="primary"
+            onClick={() => {
+              setIsopen(!isOpen);
+              setData(record);
+            }}
+          >
+            Edit
+          </Button>
           <Button
             type="primary"
             onClick={() => {
@@ -57,6 +65,8 @@ function Sell() {
     },
   ];
 
+  const [data, setData] = useState<CarProp | undefined>();
+
   const handleDelete = (record: CarProp) => {
     const Newcars = cars.filter((car: CarProp) => car.id !== record.id);
     setCars([...Newcars]);
@@ -65,12 +75,23 @@ function Sell() {
   const [isOpen, setIsopen] = useState<boolean>(false);
   const [cars, setCars] = useState<CarProp[]>([]);
 
-  const handleAdd = (carInfo: CarProp) => {
-    setCars([...cars, carInfo]);
+  const handleEditAdd = (carInfo: CarProp) => {
+    if (cars.find((car: CarProp) => car.id === carInfo.id)) {
+      const updatedcars = cars.map((car: CarProp) => {
+        if (car.id === carInfo.id) {
+          return carInfo;
+        }
+        return car;
+      });
+      setCars(updatedcars);
+    } else {
+      setCars([...cars, carInfo]);
+    }
   };
 
   const handleCancel = () => {
     setIsopen(!isOpen);
+    setData(undefined);
   };
 
   return (
@@ -85,7 +106,8 @@ function Sell() {
         <SellPopup
           showPopup={isOpen}
           handleCancel={handleCancel}
-          handleAdd={handleAdd}
+          handleEditAdd={handleEditAdd}
+          data={data}
         />
       )}
     </>
