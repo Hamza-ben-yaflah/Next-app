@@ -5,12 +5,12 @@ import styles from "./Login.module.css";
 import Link from "next/link";
 
 interface LoginProp {
-  ChangeState: () => void;
+  changeState: () => void;
 }
 
-const Login = ({ ChangeState }: LoginProp) => {
+const Login = ({ changeState }: LoginProp) => {
   return (
-    <div className={styles.login}>
+    <div className={styles.login} data-testid="login">
       <Form
         name="normal_login"
         className="login-form"
@@ -38,7 +38,7 @@ const Login = ({ ChangeState }: LoginProp) => {
           </Form.Item>
 
           <a className="login-form-forgot" href="">
-            Forgot password
+            Forgot
           </a>
         </Form.Item>
 
@@ -52,7 +52,7 @@ const Login = ({ ChangeState }: LoginProp) => {
               Log in
             </Button>
           </Link>
-          Or <a onClick={ChangeState}>register now!</a>{" "}
+          Or <a onClick={changeState}>register now!</a>{" "}
         </Form.Item>
       </Form>
     </div>

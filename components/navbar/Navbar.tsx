@@ -1,8 +1,6 @@
 import React from "react";
 import { Layout, Button, Input, Menu } from "antd";
 import styles from "./Navbar.module.css";
-import Image from "next/image";
-import car from "./car.jpg";
 import Link from "next/link";
 
 import {
@@ -22,13 +20,13 @@ function Navbar() {
       style={{ position: "fixed", zIndex: 1, width: "100%" }}
     >
       <div className={styles.imageContainer}>
-        <Image
+        {/* <Image
           src={car}
           alt="car image"
           width={70}
           height={50}
           className={styles.imgCar}
-        />
+        /> */}
         <Link href="/" passHref>
           <Button
             type="link"
@@ -39,6 +37,7 @@ function Navbar() {
             Home
           </Button>
         </Link>
+
         <Button
           type="link"
           className={styles.btn}
@@ -76,7 +75,7 @@ function Navbar() {
         </Button>
         <Button type="primary" className={styles.btn} size="large">
           <Link href="/RegisterPage" passHref>
-            <a>Sign up</a>
+            <a>log out</a>
           </Link>
         </Button>
       </div>

@@ -7,13 +7,15 @@ import Footer from "../Footer/Footer";
 
 const Landig = () => {
   return (
-    <Space direction="vertical" size="large">
-      <HeroSection />
-      <FeatureSection />
-      <FindUsSection />
-      <ContactSection />
-      <Footer />
-    </Space>
+    <div data-testid="landing">
+      <Space direction="vertical" size="large">
+        <HeroSection />
+        <FeatureSection />
+        <FindUsSection />
+        <ContactSection />
+        <Footer />
+      </Space>
+    </div>
   );
 };
 

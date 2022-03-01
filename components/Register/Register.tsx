@@ -13,7 +13,7 @@ function Register() {
     </Form.Item>
   );
   return (
-    <div className={styles.Register}>
+    <div className={styles.Register} data-testid="register">
       <Form
         name="register"
         initialValues={{
@@ -116,7 +116,7 @@ function Register() {
               htmlType="submit"
               className={styles.Register_form_button}
             >
-              <a>Register</a>
+              Register
             </Button>
           </Link>
         </Form.Item>
