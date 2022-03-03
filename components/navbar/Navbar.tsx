@@ -29,6 +29,7 @@ function Navbar() {
         /> */}
         <Link href="/" passHref>
           <Button
+            data-testid="home"
             type="link"
             className={styles.btn}
             size="large"
@@ -68,14 +69,16 @@ function Navbar() {
       </div>
       <div className={styles.loginContainer}>
         <Search placeholder="Search" style={{ width: 300 }} size="large" />
+
         <Button type="primary" className={styles.btn} size="large">
           <Link href="/LoginRegister" passHref>
             <a>Log in</a>
           </Link>
         </Button>
+
         <Button type="primary" className={styles.btn} size="large">
           <Link href="/RegisterPage" passHref>
-            <a>log out</a>
+            <a>sign up</a>
           </Link>
         </Button>
       </div>

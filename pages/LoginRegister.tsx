@@ -11,7 +11,7 @@ function LoginRegister() {
   }
 
   return (
-    <div>{isLogin ? <Login ChangeState={ChangeState} /> : <Register />}</div>
+    <div>{isLogin ? <Login changeState={ChangeState} /> : <Register />}</div>
   );
 }
 

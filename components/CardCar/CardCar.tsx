@@ -19,7 +19,7 @@ function CardCar({ car }: { car: ICarCard }) {
     setIsModalVisible(false);
   };
   return (
-    <div className={styles.container}>
+    <div className={styles.container} data-testid="car">
       <Image
         src={"https:" + car.fields.imageCar?.fields.file.url}
         alt=" car image"

@@ -16,6 +16,7 @@ exports[`render the navbar 1`] = `
   >
     <a
       className="ant-btn ant-btn-link ant-btn-lg btn"
+      data-testid="home"
       href="/"
       onClick={[Function]}
       onMouseEnter={[Function]}
